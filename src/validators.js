@@ -13,8 +13,8 @@ function addValidators(e, validators) {
       case "missing" : e.validity.valueMissing ? validMsg += (validators[key] + "\n") : ""; break;
       case "valid" : e.validity.valid ? validMsg += (validators[key] + "\n") : ""; break;
     }
-    e.setCustomValidity(validMsg);
   }
+  e.setCustomValidity(validMsg);
 }
 
 export {addValidators};
