@@ -14,4 +14,12 @@ emailElem.addEventListener("input", e => {
   addValidators(e.target, emailValidators);
   e.target.reportValidity();
 });
-  
+
+let submitBtn = document.querySelector("form > button");
+submitBtn.addEventListener("click", e => {
+  e.preventDefault();
+  let validForm = true;
+  document.querySelectorAll("form > input").forEach(e => {validForm = validForm && e.validity.valid});
+  if (validForm)
+    alert("Well Done!!");
+});
