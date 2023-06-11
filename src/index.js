@@ -18,8 +18,9 @@ emailElem.addEventListener("input", e => {
 let submitBtn = document.querySelector("form > button");
 submitBtn.addEventListener("click", e => {
   e.preventDefault();
-  let validForm = true;
+  let validForm = true, displayMsg = "Sorry, please try again!";
   document.querySelectorAll("form > input").forEach(e => {validForm = validForm && e.validity.valid});
   if (validForm)
-    alert("Well Done!!");
+    displayMsg = "Well done!";
+  alert(displayMsg);
 });
